@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A classroom-safe Wheel-style word puzzle game that runs entirely in the browser."
+  />
+  <title>Friday Wheel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="themes.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <!-- <p class="eyebrow">CLASSROOM EDITION · v24</p> -->
+        <h1>Friday Wheel</h1>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="button button-secondary" id="themeButton" type="button">Theme</button>
+        <button class="button button-secondary" id="instructionsButton" type="button">Instructions</button>
+        <button class="button button-secondary" id="wheelSettingsButton" type="button">Wheel Settings</button>
+        <button class="button button-danger" id="newGameButton" type="button">Create New Game</button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="panel puzzle-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">PUZZLE BOARD</p>
+            <h2 id="categoryDisplay">Ready for a puzzle</h2>
+          </div>
+        </div>
+
+        <div id="puzzleBoard" class="puzzle-board" aria-live="polite">
+          <div class="empty-board-message">Create a new game to load the puzzle.</div>
+        </div>
+
+        <div class="played-letters-wrap">
+          <span class="field-label">Played letters</span>
+          <div id="playedLetters" class="played-letters" aria-label="Played letters">
+            <span class="muted">None yet</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel gameplay-panel">
+        <div class="wheel-column">
+          <div class="wheel-stage">
+            <div class="wheel-pointer" aria-hidden="true"></div>
+            <canvas id="wheelCanvas" width="720" height="720" aria-label="Prize wheel"></canvas>
+            <button id="spinButton" class="spin-button" type="button">SPIN</button>
+          </div>
+        </div>
+
+        <div class="control-column">
+          <div class="wheel-status">
+            <p class="section-kicker">CURRENT TURN VALUE</p>
+            <div id="currentValue" class="current-value">—</div>
+            <div id="spinResult" class="spin-result" aria-live="polite">
+              Spin result: <strong>—</strong>
+            </div>
+          </div>
+
+          <section class="controls-panel" aria-labelledby="currentPlayerHeading">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">TURN CONTROLS</p>
+                <h2 id="currentPlayerHeading">Create a game to begin</h2>
+              </div>
+            </div>
+
+            <div class="turn-controls-grid">
+              <div class="guess-control">
+                <label class="field-label" for="letterInput">Guess a letter</label>
+                <div class="input-row">
+                  <input
+                    id="letterInput"
+                    class="text-input letter-input"
+                    type="text"
+                    maxlength="1"
+                    autocomplete="off"
+                    inputmode="text"
+                    aria-describedby="letterHelp"
+                  />
+                  <button class="button button-primary" id="guessButton" type="button">Play Consonant</button>
+                  <button class="button button-secondary" id="buyVowelButton" type="button">Buy Vowel · 250</button>
+                </div>
+                <p class="field-help" id="letterHelp">
+                  Correct consonants score the current spin value per match. Vowels cost 250 total.
+                </p>
+                <div id="guessMessage" class="guess-message" aria-live="polite"></div>
+              </div>
+
+              <div class="manual-actions">
+                <span class="field-label">Host actions</span>
+                <div class="manual-action-buttons">
+                  <button class="button button-secondary" id="nextPlayerButton" type="button">Next Player</button>
+                  <button class="button button-secondary" id="solveButton" type="button">Solve Puzzle</button>
+                  <button class="button button-secondary" id="revealButton" type="button">Reveal Puzzle</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="responsive-scoreboard-action">
+              <button class="button scoreboard-button" id="scoreboardButton" type="button">Scoreboard</button>
+            </div>
+          </section>
+        </div>
+
+        <aside class="scoreboard-column" aria-label="Scoreboard">
+          <section class="players-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">PLAYERS</p>
+                <h2>Scoreboard</h2>
+                <p class="score-legend">Game / Overall</p>
+              </div>
+            </div>
+            <div id="playersList" class="players-list">
+              <div class="empty-state">No players yet.</div>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="newGameDialog" class="dialog new-game-dialog">
+    <form id="newGameForm" class="dialog-card new-game-dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">GAME SETUP</p>
+          <h2>Create New Game</h2>
+        </div>
+        <button class="icon-button" id="closeNewGameButton" type="button" aria-label="Close game setup">×</button>
+      </div>
+
+      <div class="new-game-fields">
+        <div>
+          <label class="field-label" for="newGameCategoryInput">Topic / Category</label>
+          <input
+            class="text-input"
+            id="newGameCategoryInput"
+            type="text"
+            placeholder="Phrase, Person, Thing..."
+            required
+          />
+        </div>
+
+        <div>
+          <label class="field-label" for="newGamePhraseInput">Word or phrase</label>
+          <textarea
+            class="text-input phrase-input"
+            id="newGamePhraseInput"
+            rows="3"
+            placeholder="Enter the answer. It stays hidden during play."
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="new-game-player-section">
+        <div>
+          <p class="section-kicker">PLAYERS</p>
+          <h3>Players for this game</h3>
+        </div>
+
+        <div class="new-game-player-entry">
+          <input
+            class="text-input"
+            id="newGamePlayerInput"
+            type="text"
+            placeholder="Player name"
+            autocomplete="off"
+          />
+          <button class="button button-secondary" id="newGameAddPlayerButton" type="button">Add Player</button>
+        </div>
+
+        <div id="newGamePlayersList" class="new-game-players-list"></div>
+        <p id="newGameSetupMessage" class="guess-message" aria-live="polite"></p>
+      </div>
+
+      <div class="dialog-actions">
+        <button class="button button-secondary" id="cancelNewGameButton" type="button">Cancel</button>
+        <button class="button button-primary" type="submit">Start Game</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="solveDialog" class="dialog">
+    <form id="solveForm" class="dialog-card" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">SOLVE</p>
+          <h2>Solve the puzzle</h2>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Close solve dialog">×</button>
+      </div>
+
+      <label class="field-label" for="solveInput">Player's answer</label>
+      <input class="text-input" id="solveInput" type="text" required autocomplete="off" />
+
+      <p class="field-help">Punctuation and spaces do not need to match the puzzle exactly.</p>
+
+      <div class="dialog-actions">
+        <button class="button button-secondary" data-close-dialog="solveDialog" type="button">Cancel</button>
+        <button class="button button-primary" type="submit">Check Answer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="wheelSettingsDialog" class="dialog wheel-settings-dialog">
+    <form id="wheelSettingsForm" class="dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">CONFIGURATION</p>
+          <h2>Wheel Settings</h2>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Close wheel settings">×</button>
+      </div>
+
+      <p class="field-help settings-intro">
+        Enter each point value once, one per line. The game automatically creates two of every value,
+        two BANKRUPT spaces, and two LOSE A TURN spaces, then randomizes the wheel for each new game.
+      </p>
+
+      <textarea id="wheelValuesInput" class="text-input settings-textarea" rows="12"></textarea>
+
+      <div class="dialog-actions split-actions">
+        <button class="button button-secondary" id="resetWheelButton" type="button">Restore Defaults</button>
+        <div>
+          <button class="button button-secondary" data-close-dialog="wheelSettingsDialog" type="button">Cancel</button>
+          <button class="button button-primary" type="submit">Save Wheel</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="scoreboardDialog" class="dialog scoreboard-dialog">
+    <div class="dialog-card scoreboard-dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">PLAYERS</p>
+          <h2>Scoreboard</h2>
+        </div>
+        <button class="icon-button" id="closeScoreboardButton" type="button" aria-label="Close scoreboard">×</button>
+      </div>
+
+      <div id="scoreboardModalBody" class="scoreboard-modal-body"></div>
+
+      <div class="dialog-actions">
+        <button class="button button-primary" id="closeScoreboardButtonBottom" type="button">Close Scoreboard</button>
+      </div>
+    </div>
+  </dialog>
+
+
+  <dialog id="themeDialog" class="dialog theme-dialog">
+    <div class="dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">APPEARANCE</p>
+          <h2>Choose a Theme</h2>
+        </div>
+        <button class="icon-button" id="closeThemeButton" type="button" aria-label="Close theme selector">×</button>
+      </div>
+
+      <p class="field-help theme-help">
+        Themes change the surrounding interface only. The playful themes use several accent colors, while the wheel keeps its classic colors and appearance.
+      </p>
+
+      <div class="theme-options" role="group" aria-label="Available themes">
+        <button class="theme-option" type="button" data-theme-option="classic" aria-pressed="false">
+          <span class="theme-preview theme-preview-classic" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Classic</strong><small>Warm charcoal and gold</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="midnight" aria-pressed="false">
+          <span class="theme-preview theme-preview-midnight" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Midnight</strong><small>Deep navy and cool blue</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="chalkboard" aria-pressed="false">
+          <span class="theme-preview theme-preview-chalkboard" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Chalkboard</strong><small>Classroom green and cream</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="plum" aria-pressed="false">
+          <span class="theme-preview theme-preview-plum" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Plum</strong><small>Deep purple and rose</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="slate" aria-pressed="false">
+          <span class="theme-preview theme-preview-slate" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Slate</strong><small>Cool gray and teal</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="carnival" aria-pressed="false">
+          <span class="theme-preview theme-preview-whimsical theme-preview-carnival" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>Carnival</strong><small>Bright midway colors and striped accents</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="gumballs" aria-pressed="false">
+          <span class="theme-preview theme-preview-whimsical theme-preview-gumballs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>Gumballs</strong><small>Candy-shop brights on a dark base</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="skittles" aria-pressed="false">
+          <span class="theme-preview theme-preview-whimsical theme-preview-skittles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>Skittles</strong><small>Rainbow accents without changing the wheel</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="arcade" aria-pressed="false">
+          <span class="theme-preview theme-preview-whimsical theme-preview-arcade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>Arcade</strong><small>Neon cyan, magenta, purple, and yellow</small></span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="toybox" aria-pressed="false">
+          <span class="theme-preview theme-preview-whimsical theme-preview-toybox" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>Toy Box</strong><small>Playful primary colors on deep blue</small></span>
+        </button>
+      </div>
+
+      <div class="dialog-actions">
+        <button class="button button-primary" id="closeThemeButtonBottom" type="button">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="instructionsDialog" class="dialog instructions-dialog">
+    <div class="dialog-card instructions-dialog-card">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">HOW TO PLAY</p>
+          <h2>Friday Wheel Instructions</h2>
+        </div>
+        <button class="icon-button" id="closeInstructionsButton" type="button" aria-label="Close instructions">×</button>
+      </div>
+
+      <p class="classroom-safety-note">
+        Classroom-safe text filtering is always enabled for topics, puzzles, player names, and solve attempts.
+      </p>
+
+      <ol class="instructions-list">
+        <li>Click <strong>Create New Game</strong>.</li>
+        <li>Enter the topic/category and the puzzle answer.</li>
+        <li>Add every player who will participate, then click <strong>Start Game</strong>.</li>
+        <li>The active player spins the wheel and then chooses a consonant.</li>
+        <li>Each matching consonant earns the wheel value once for every occurrence in the puzzle.</li>
+        <li>A vowel costs <strong>250 points total</strong>, no matter how many times it appears.</li>
+        <li>An incorrect consonant or vowel ends the turn.</li>
+        <li><strong>BANKRUPT</strong> resets the active player's current-game score to zero and ends the turn.</li>
+        <li><strong>LOSE A TURN</strong> immediately moves play to the next player.</li>
+        <li>A player may attempt to solve during their turn. Punctuation and spacing do not have to be typed exactly.</li>
+        <li>When a new game is created, current-game scores are added to each returning player's overall total.</li>
+        <li>Use <strong>Theme</strong> to change the surrounding interface. The wheel itself always keeps its classic appearance.</li>
+      </ol>
+
+      <div class="dialog-actions">
+        <button class="button button-primary" id="closeInstructionsButtonBottom" type="button">Got It</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="confirmDialog" class="dialog">
+    <form class="dialog-card" method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="section-kicker">CONFIRM</p>
+          <h2 id="confirmTitle">Are you sure?</h2>
+        </div>
+      </div>
+      <p id="confirmMessage"></p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Cancel</button>
+        <button class="button button-danger" id="confirmActionButton" value="default">Continue</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="game-core.js"></script>
+  <script src="storage.js"></script>
+  <script src="wheel.js"></script>
+  <script src="content-filter.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

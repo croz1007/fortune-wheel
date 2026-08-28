@@ -1,0 +1,1528 @@
+:root {
+  /* Themeable interface tokens */
+  --page-background:
+    radial-gradient(circle at 20% 0%, rgba(240, 185, 75, 0.08), transparent 30rem),
+    linear-gradient(135deg, #0d0c0b 0%, #151311 55%, #0e0d0c 100%);
+  --panel-start: rgba(35, 32, 29, 0.98);
+  --panel-end: rgba(26, 24, 22, 0.98);
+  --panel: #1c1a18;
+  --panel-2: #24211f;
+  --surface: #211e1b;
+  --surface-2: #302c28;
+  --surface-3: #332f2b;
+  --surface-border: #49423c;
+  --input-bg: #121110;
+  --input-border: #4b443d;
+  --dialog-bg: #1d1a18;
+  --icon-bg: #312d29;
+  --spin-result-bg: #151311;
+  --text: #f6efe6;
+  --label: #ded6cd;
+  --muted: #b8aea3;
+  --placeholder: #80776e;
+  --border: #3a342f;
+  --accent: #f0b94b;
+  --accent-bright: #ffd978;
+  --accent-ink: #211b12;
+  --red: #bd3434;
+  --green: #4fa86f;
+  --focus: #8ab4f8;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+
+  /* Fixed wheel tokens. Themes must not alter these. */
+  --wheel-pointer: #ffd978;
+  --wheel-spin-light: #fff0b9;
+  --wheel-spin-mid: #e9b33f;
+  --wheel-spin-dark: #8f641f;
+  --wheel-spin-ink: #21180b;
+  --wheel-spin-border: #211d19;
+  --wheel-spin-ring: #66502d;
+}
+
+html[data-theme="midnight"] {
+  --page-background:
+    radial-gradient(circle at 18% 0%, rgba(85, 151, 215, 0.14), transparent 31rem),
+    linear-gradient(135deg, #08111c 0%, #101b2a 55%, #09121c 100%);
+  --panel-start: rgba(24, 39, 56, 0.98);
+  --panel-end: rgba(15, 28, 42, 0.98);
+  --surface: #142334;
+  --surface-2: #1a2b3e;
+  --surface-3: #20364c;
+  --surface-border: #37536d;
+  --input-bg: #09131f;
+  --input-border: #34506a;
+  --dialog-bg: #102033;
+  --icon-bg: #20354a;
+  --spin-result-bg: #0b1623;
+  --text: #eef6ff;
+  --label: #d9e8f6;
+  --muted: #a8bdd0;
+  --placeholder: #71899f;
+  --border: #2c4358;
+  --accent: #5b9bd5;
+  --accent-bright: #8bc5f5;
+  --accent-ink: #07131e;
+  --focus: #9bd1ff;
+}
+
+html[data-theme="chalkboard"] {
+  --page-background:
+    radial-gradient(circle at 20% 0%, rgba(220, 202, 139, 0.10), transparent 30rem),
+    linear-gradient(135deg, #10211b 0%, #183128 55%, #10221c 100%);
+  --panel-start: rgba(29, 55, 45, 0.98);
+  --panel-end: rgba(21, 42, 35, 0.98);
+  --surface: #1d3a30;
+  --surface-2: #26483c;
+  --surface-3: #2a5042;
+  --surface-border: #4e6e61;
+  --input-bg: #0f211b;
+  --input-border: #4b695e;
+  --dialog-bg: #183128;
+  --icon-bg: #2a4a3e;
+  --spin-result-bg: #10231c;
+  --text: #f2efe2;
+  --label: #e6e0cb;
+  --muted: #bdb9a8;
+  --placeholder: #858476;
+  --border: #3d5b50;
+  --accent: #d2b95e;
+  --accent-bright: #ead482;
+  --accent-ink: #241f0d;
+  --focus: #f2d77c;
+}
+
+html[data-theme="plum"] {
+  --page-background:
+    radial-gradient(circle at 20% 0%, rgba(196, 105, 154, 0.13), transparent 30rem),
+    linear-gradient(135deg, #170f18 0%, #28192a 55%, #170f18 100%);
+  --panel-start: rgba(54, 34, 56, 0.98);
+  --panel-end: rgba(39, 25, 42, 0.98);
+  --surface: #342238;
+  --surface-2: #402a45;
+  --surface-3: #4a3050;
+  --surface-border: #684d6d;
+  --input-bg: #1b111e;
+  --input-border: #624968;
+  --dialog-bg: #2b1c2e;
+  --icon-bg: #49304e;
+  --spin-result-bg: #1c121f;
+  --text: #faeff8;
+  --label: #eedbed;
+  --muted: #c8adc5;
+  --placeholder: #90758d;
+  --border: #573d5b;
+  --accent: #c4699a;
+  --accent-bright: #e792bd;
+  --accent-ink: #26101d;
+  --focus: #f2acd0;
+}
+
+html[data-theme="slate"] {
+  --page-background:
+    radial-gradient(circle at 20% 0%, rgba(85, 181, 176, 0.11), transparent 30rem),
+    linear-gradient(135deg, #101517 0%, #1b2326 55%, #111719 100%);
+  --panel-start: rgba(39, 49, 52, 0.98);
+  --panel-end: rgba(28, 36, 39, 0.98);
+  --surface: #263033;
+  --surface-2: #303c40;
+  --surface-3: #364448;
+  --surface-border: #526266;
+  --input-bg: #12191b;
+  --input-border: #4a5c60;
+  --dialog-bg: #202a2d;
+  --icon-bg: #344246;
+  --spin-result-bg: #141c1e;
+  --text: #eef3f2;
+  --label: #dae5e3;
+  --muted: #adbdbc;
+  --placeholder: #768887;
+  --border: #46565a;
+  --accent: #55b5b0;
+  --accent-bright: #83d4cf;
+  --accent-ink: #0c211f;
+  --focus: #91ded9;
+}
+
+
+/* Playful multicolor themes. These tokens affect only the surrounding UI.
+   Wheel-specific colors are intentionally fixed in the :root wheel tokens. */
+html[data-theme="carnival"] {
+  --page-background:
+    radial-gradient(circle at 8% 0%, rgba(240, 67, 67, .22), transparent 25rem),
+    radial-gradient(circle at 90% 5%, rgba(255, 204, 61, .18), transparent 28rem),
+    linear-gradient(135deg, #07152d 0%, #10234a 52%, #071326 100%);
+  --panel-start: rgba(19, 39, 75, .98);
+  --panel-end: rgba(10, 25, 52, .98);
+  --surface: #132c55;
+  --surface-2: #1b3969;
+  --surface-3: #214579;
+  --surface-border: #42669a;
+  --input-bg: #07162d;
+  --input-border: #43699b;
+  --dialog-bg: #0e2448;
+  --icon-bg: #203f70;
+  --spin-result-bg: #08192f;
+  --text: #fff8e8;
+  --label: #fff0c9;
+  --muted: #c9d5e8;
+  --placeholder: #8295b2;
+  --border: #365b8d;
+  --accent: #ffd23f;
+  --accent-bright: #ffe681;
+  --accent-ink: #342700;
+  --focus: #7bdff2;
+  --fun-1: #ef476f;
+  --fun-2: #ffd166;
+  --fun-3: #06d6a0;
+  --fun-4: #4cc9f0;
+}
+
+html[data-theme="gumballs"] {
+  --page-background:
+    radial-gradient(circle at 10% 5%, rgba(255, 71, 166, .20), transparent 22rem),
+    radial-gradient(circle at 86% 8%, rgba(50, 214, 255, .18), transparent 24rem),
+    radial-gradient(circle at 60% 90%, rgba(173, 255, 47, .10), transparent 28rem),
+    linear-gradient(135deg, #151020 0%, #20142f 52%, #101a25 100%);
+  --panel-start: rgba(45, 30, 61, .98);
+  --panel-end: rgba(27, 22, 43, .98);
+  --surface: #30243f;
+  --surface-2: #3c2b4f;
+  --surface-3: #48345e;
+  --surface-border: #73588b;
+  --input-bg: #17101f;
+  --input-border: #68507c;
+  --dialog-bg: #281d36;
+  --icon-bg: #49345d;
+  --spin-result-bg: #17111f;
+  --text: #fff5fd;
+  --label: #f8dbef;
+  --muted: #cbb7d1;
+  --placeholder: #917d99;
+  --border: #604973;
+  --accent: #ff4fa3;
+  --accent-bright: #ff8ac4;
+  --accent-ink: #310017;
+  --focus: #48dff7;
+  --fun-1: #ff4fa3;
+  --fun-2: #48dff7;
+  --fun-3: #ffd84d;
+  --fun-4: #9be34c;
+}
+
+html[data-theme="skittles"] {
+  --page-background:
+    radial-gradient(circle at 12% 0%, rgba(255, 59, 48, .16), transparent 22rem),
+    radial-gradient(circle at 50% 0%, rgba(255, 214, 10, .12), transparent 20rem),
+    radial-gradient(circle at 88% 0%, rgba(52, 199, 89, .14), transparent 24rem),
+    linear-gradient(135deg, #111112 0%, #1b1b1e 55%, #101012 100%);
+  --panel-start: rgba(35, 35, 40, .98);
+  --panel-end: rgba(24, 24, 29, .98);
+  --surface: #28282e;
+  --surface-2: #323239;
+  --surface-3: #3d3d45;
+  --surface-border: #5b5b66;
+  --input-bg: #121216;
+  --input-border: #555560;
+  --dialog-bg: #222228;
+  --icon-bg: #3b3b43;
+  --spin-result-bg: #151519;
+  --text: #fbfbfd;
+  --label: #ededf0;
+  --muted: #b7b7bf;
+  --placeholder: #81818a;
+  --border: #494952;
+  --accent: #ff453a;
+  --accent-bright: #ff7b73;
+  --accent-ink: #2b0503;
+  --focus: #64d2ff;
+  --fun-1: #ff453a;
+  --fun-2: #ffd60a;
+  --fun-3: #30d158;
+  --fun-4: #bf5af2;
+}
+
+html[data-theme="arcade"] {
+  --page-background:
+    radial-gradient(circle at 15% 5%, rgba(255, 55, 199, .18), transparent 26rem),
+    radial-gradient(circle at 85% 0%, rgba(38, 229, 255, .17), transparent 28rem),
+    linear-gradient(135deg, #090713 0%, #17102a 55%, #070a13 100%);
+  --panel-start: rgba(33, 24, 60, .98);
+  --panel-end: rgba(20, 15, 40, .98);
+  --surface: #261b43;
+  --surface-2: #302153;
+  --surface-3: #392865;
+  --surface-border: #634d87;
+  --input-bg: #0d0918;
+  --input-border: #5b477c;
+  --dialog-bg: #1d1535;
+  --icon-bg: #38275d;
+  --spin-result-bg: #0e0b1b;
+  --text: #f8f4ff;
+  --label: #e7ddfa;
+  --muted: #baabd1;
+  --placeholder: #7f7195;
+  --border: #503d70;
+  --accent: #27e6ff;
+  --accent-bright: #7af2ff;
+  --accent-ink: #001f24;
+  --focus: #fff36a;
+  --fun-1: #27e6ff;
+  --fun-2: #ff37c7;
+  --fun-3: #fff36a;
+  --fun-4: #9c5cff;
+}
+
+html[data-theme="toybox"] {
+  --page-background:
+    radial-gradient(circle at 12% 0%, rgba(255, 78, 68, .17), transparent 24rem),
+    radial-gradient(circle at 88% 0%, rgba(255, 210, 63, .15), transparent 26rem),
+    linear-gradient(135deg, #0b2045 0%, #143363 55%, #0a1d3c 100%);
+  --panel-start: rgba(28, 58, 104, .98);
+  --panel-end: rgba(17, 40, 77, .98);
+  --surface: #1c467d;
+  --surface-2: #245493;
+  --surface-3: #2c61a6;
+  --surface-border: #587eb7;
+  --input-bg: #0b2345;
+  --input-border: #5277ac;
+  --dialog-bg: #173968;
+  --icon-bg: #2b5b98;
+  --spin-result-bg: #0c2548;
+  --text: #fff9e9;
+  --label: #f9ecc9;
+  --muted: #c7d5e7;
+  --placeholder: #8297b4;
+  --border: #456da6;
+  --accent: #ffd23f;
+  --accent-bright: #ffe886;
+  --accent-ink: #362800;
+  --focus: #5ee6ff;
+  --fun-1: #ff5148;
+  --fun-2: #ffd23f;
+  --fun-3: #41d36f;
+  --fun-4: #4fc3ff;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--page-background);
+}
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+button:disabled { cursor: not-allowed; opacity: 0.48; }
+
+.app-shell {
+  width: min(1680px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 18px 0 28px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+.topbar h1, .panel h2, .dialog h2 { margin: 0; }
+.topbar h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+.eyebrow, .section-kicker {
+  margin: 0 0 5px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.topbar-actions, .dialog-actions, .manual-action-buttons, .input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button, .icon-button, .spin-button { border: 0; }
+.button {
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-weight: 800;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+.button:hover:not(:disabled) { filter: brightness(1.08); }
+.button:active:not(:disabled) { transform: translateY(1px); }
+.button-primary {
+  background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+  color: var(--accent-ink);
+}
+.button-secondary {
+  background: var(--surface-3);
+  color: var(--text);
+  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+}
+.button-danger { background: #7f2c2c; color: #fff; }
+.scoreboard-button {
+  width: 100%;
+  background: linear-gradient(180deg, #6fc58b, var(--green));
+  color: #102116;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.game-layout { display: grid; gap: 14px; }
+.panel {
+  background: linear-gradient(180deg, var(--panel-start), var(--panel-end));
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+.panel-heading h2 { font-size: 1.25rem; }
+
+/* Puzzle */
+.puzzle-panel { padding: 14px 16px; }
+.puzzle-board {
+  min-height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  column-gap: clamp(22px, 2.2vw, 34px);
+  row-gap: 18px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 0;
+  background: linear-gradient(rgba(255,255,255,0.035), rgba(255,255,255,0.035));
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.3), 0 4px 14px rgba(0,0,0,.16);
+}
+.puzzle-word { display: inline-flex; flex-wrap: nowrap; gap: 5px; flex: 0 0 auto; max-width: 100%; }
+.puzzle-char {
+  width: clamp(34px, 3.3vw, 50px);
+  height: clamp(46px, 4.4vw, 60px);
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #f4ede3;
+  color: #1a1714;
+  border: 2px solid #d3c7b9;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.05), 0 5px 0 #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.25rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.puzzle-char.hidden-letter { color: transparent; user-select: none; }
+.puzzle-char.punctuation {
+  width: auto;
+  min-width: 14px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--text);
+}
+.empty-board-message, .empty-state { color: var(--muted); text-align: center; }
+.played-letters-wrap { margin-top: 10px; }
+.played-letters { display: flex; flex-wrap: wrap; gap: 7px; min-height: 34px; }
+.played-letter {
+  min-width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 0;
+  box-shadow: 0 2px 7px rgba(0,0,0,.16);
+  font-weight: 900;
+}
+.played-letter.hit { background: rgba(79,168,111,.22); }
+.played-letter.miss { background: rgba(189,52,52,.22); }
+
+/* Main gameplay: wheel / controls / scoreboard */
+.gameplay-panel {
+  display: grid;
+  grid-template-columns: minmax(540px, 1.5fr) minmax(320px, .82fr) minmax(280px, .72fr);
+  gap: 0;
+  align-items: stretch;
+  padding: 14px;
+}
+.wheel-column, .control-column, .scoreboard-column { min-width: 0; }
+.wheel-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 18px;
+}
+.control-column {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.025), 0 4px 14px rgba(0,0,0,.12);
+}
+.scoreboard-column {
+  padding: 16px 0 16px 18px;
+}
+
+.wheel-stage {
+  position: relative;
+  width: min(100%, 60vh, 610px);
+  min-width: 520px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+#wheelCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 18px 25px rgba(0,0,0,.45));
+  transition: transform 5.2s cubic-bezier(.12,.8,.18,1);
+}
+.wheel-pointer {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 48px solid var(--wheel-pointer);
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.55));
+}
+.spin-button {
+  position: absolute;
+  z-index: 3;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--wheel-spin-light), var(--wheel-spin-mid) 58%, var(--wheel-spin-dark) 100%);
+  color: var(--wheel-spin-ink);
+  font-weight: 950;
+  font-size: 1.1rem;
+  letter-spacing: .05em;
+  border: 7px solid var(--wheel-spin-border);
+  box-shadow: 0 0 0 4px var(--wheel-spin-ring), 0 10px 20px rgba(0,0,0,.35);
+}
+.wheel-status { padding-bottom: 4px; }
+.current-value {
+  margin: 4px 0 8px;
+  color: var(--accent-bright);
+  font-size: clamp(2rem, 3.2vw, 3.5rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -.04em;
+}
+.spin-result {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: var(--spin-result-bg);
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035);
+  color: var(--muted);
+}
+.spin-result strong { color: var(--accent-bright); }
+.controls-panel, .players-panel { background: transparent; border: 0; box-shadow: none; }
+.turn-controls-grid { display: grid; gap: 16px; }
+.input-row { display: grid; grid-template-columns: 64px 1fr; gap: 8px; }
+#buyVowelButton { grid-column: 1 / -1; }
+.manual-action-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.manual-action-buttons .button:last-child { grid-column: 1 / -1; }
+.responsive-scoreboard-action { display: none; margin-top: 14px; padding-top: 4px; }
+
+/* Scoreboard */
+.players-list { display: grid; gap: 10px; max-height: min(56vh, 560px); overflow-y: auto; padding-right: 4px; }
+.player-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.16);
+}
+.player-card.active { box-shadow: inset 5px 0 0 var(--accent-bright), 0 5px 14px rgba(0,0,0,.2); }
+.player-name { font-weight: 900; overflow-wrap: anywhere; }
+.player-score { display: grid; gap: 2px; text-align: right; }
+.player-score-current { color: var(--accent-bright); font-weight: 950; }
+.player-score-overall, .score-legend { color: var(--muted); font-size: .76rem; font-weight: 800; }
+.score-legend { margin: 4px 0 0; }
+.player-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+.player-mini-button {
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 0;
+  background: var(--surface-2);
+  box-shadow: 0 2px 7px rgba(0,0,0,.14);
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+/* Form controls */
+.field-label { display: block; margin-bottom: 8px; color: var(--label); font-size: .86rem; font-weight: 800; }
+.field-help { margin: 7px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.45; }
+.muted { color: var(--muted); }
+.text-input {
+  width: 100%;
+  min-width: 0;
+  border-radius: 10px;
+  border: 0;
+  background: var(--input-bg);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035), 0 2px 8px rgba(0,0,0,.12);
+  color: var(--text);
+  padding: 11px 12px;
+}
+.text-input::placeholder { color: var(--placeholder); }
+.letter-input { width: 64px; text-transform: uppercase; text-align: center; font-size: 1.25rem; font-weight: 900; }
+.guess-message { min-height: 22px; margin-top: 8px; font-weight: 800; }
+.guess-message.good { color: #7fd79d; }
+.guess-message.bad { color: #ee8585; }
+
+/* Dialogs */
+.dialog {
+  width: min(92vw, 560px);
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(3px); }
+.dialog-card {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+  max-height: 92vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--dialog-bg);
+}
+.dialog-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.icon-button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--icon-bg);
+  color: var(--text);
+  font-size: 1.6rem;
+}
+.dialog-actions { justify-content: flex-end; margin-top: 4px; }
+.split-actions { justify-content: space-between; flex-wrap: wrap; }
+.split-actions > div { display: flex; gap: 10px; }
+.new-game-dialog, .wheel-settings-dialog, .scoreboard-dialog, .instructions-dialog { width: min(94vw, 720px); }
+.phrase-input, .settings-textarea { resize: vertical; }
+.settings-textarea { min-height: 260px; max-height: 48vh; }
+.new-game-fields, .new-game-player-section { display: grid; gap: 12px; }
+.new-game-player-section { padding-top: 8px; }
+.new-game-player-section h3 { margin: 0; }
+.new-game-player-entry { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px; }
+.new-game-players-list { display: grid; gap: 8px; max-height: 220px; overflow-y: auto; }
+.new-game-player-row {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--surface);
+  box-shadow: 0 3px 10px rgba(0,0,0,.14);
+}
+.new-game-player-name { font-weight: 900; overflow-wrap: anywhere; }
+.new-game-player-overall { margin-top: 2px; color: var(--muted); font-size: .76rem; }
+.new-game-empty-players { padding: 14px; color: var(--muted); text-align: center; border: 0; border-radius: 9px; background: rgba(255,255,255,.025); }
+.instructions-list { margin: 0; padding-left: 22px; color: var(--muted); line-height: 1.55; }
+.instructions-list li + li { margin-top: 7px; }
+.classroom-safety-note {
+  margin: 0;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(79,168,111,.14);
+  color: #b8e4c6;
+  line-height: 1.45;
+  font-size: .88rem;
+}
+.scoreboard-modal-body { min-height: 180px; }
+.scoreboard-modal-body .players-panel { width: 100%; }
+.scoreboard-modal-body .players-panel > .panel-heading { display: none; }
+.scoreboard-modal-body .players-list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-height: min(52vh, 460px);
+}
+
+
+/* Theme selector */
+.theme-dialog { width: min(94vw, 720px); }
+.theme-help { margin-top: -4px; }
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.theme-option {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  color: var(--text);
+  text-align: left;
+}
+.theme-option:hover { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(0,0,0,.22); }
+.theme-option[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--surface) 84%, var(--accent) 16%);
+  box-shadow: inset 5px 0 0 var(--accent-bright), 0 7px 18px rgba(0,0,0,.22);
+}
+.theme-option strong, .theme-option small { display: block; }
+.theme-option strong { margin-bottom: 3px; font-size: .95rem; }
+.theme-option small { color: var(--muted); line-height: 1.35; }
+.theme-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 48px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.2);
+}
+.theme-preview i { display: block; }
+.theme-preview-classic i:nth-child(1) { background: #151311; }
+.theme-preview-classic i:nth-child(2) { background: #332f2b; }
+.theme-preview-classic i:nth-child(3) { background: #f0b94b; }
+.theme-preview-midnight i:nth-child(1) { background: #101b2a; }
+.theme-preview-midnight i:nth-child(2) { background: #20364c; }
+.theme-preview-midnight i:nth-child(3) { background: #5b9bd5; }
+.theme-preview-chalkboard i:nth-child(1) { background: #183128; }
+.theme-preview-chalkboard i:nth-child(2) { background: #2a5042; }
+.theme-preview-chalkboard i:nth-child(3) { background: #d2b95e; }
+.theme-preview-plum i:nth-child(1) { background: #28192a; }
+.theme-preview-plum i:nth-child(2) { background: #4a3050; }
+.theme-preview-plum i:nth-child(3) { background: #c4699a; }
+.theme-preview-slate i:nth-child(1) { background: #1b2326; }
+.theme-preview-slate i:nth-child(2) { background: #364448; }
+.theme-preview-slate i:nth-child(3) { background: #55b5b0; }
+
+
+/* Whimsical themes deliberately distribute color across the interface instead
+   of turning the entire UI into one accent color. None of these selectors
+   target the wheel, pointer, wheel canvas, or SPIN button. */
+html[data-theme="carnival"] .puzzle-panel,
+html[data-theme="gumballs"] .puzzle-panel,
+html[data-theme="skittles"] .puzzle-panel,
+html[data-theme="arcade"] .puzzle-panel,
+html[data-theme="toybox"] .puzzle-panel {
+  box-shadow: var(--shadow), 0 0 28px color-mix(in srgb, var(--fun-1) 13%, transparent);
+}
+html[data-theme="carnival"] .gameplay-panel,
+html[data-theme="gumballs"] .gameplay-panel,
+html[data-theme="skittles"] .gameplay-panel,
+html[data-theme="arcade"] .gameplay-panel,
+html[data-theme="toybox"] .gameplay-panel {
+  box-shadow: var(--shadow), 0 0 28px color-mix(in srgb, var(--fun-2) 10%, transparent);
+}
+html[data-theme="carnival"] .player-card:nth-child(4n+1),
+html[data-theme="gumballs"] .player-card:nth-child(4n+1),
+html[data-theme="skittles"] .player-card:nth-child(4n+1),
+html[data-theme="arcade"] .player-card:nth-child(4n+1),
+html[data-theme="toybox"] .player-card:nth-child(4n+1) { border-left: 4px solid var(--fun-1); }
+html[data-theme="carnival"] .player-card:nth-child(4n+2),
+html[data-theme="gumballs"] .player-card:nth-child(4n+2),
+html[data-theme="skittles"] .player-card:nth-child(4n+2),
+html[data-theme="arcade"] .player-card:nth-child(4n+2),
+html[data-theme="toybox"] .player-card:nth-child(4n+2) { border-left: 4px solid var(--fun-2); }
+html[data-theme="carnival"] .player-card:nth-child(4n+3),
+html[data-theme="gumballs"] .player-card:nth-child(4n+3),
+html[data-theme="skittles"] .player-card:nth-child(4n+3),
+html[data-theme="arcade"] .player-card:nth-child(4n+3),
+html[data-theme="toybox"] .player-card:nth-child(4n+3) { border-left: 4px solid var(--fun-3); }
+html[data-theme="carnival"] .player-card:nth-child(4n),
+html[data-theme="gumballs"] .player-card:nth-child(4n),
+html[data-theme="skittles"] .player-card:nth-child(4n),
+html[data-theme="arcade"] .player-card:nth-child(4n),
+html[data-theme="toybox"] .player-card:nth-child(4n) { border-left: 4px solid var(--fun-4); }
+html[data-theme="carnival"] .player-card.active,
+html[data-theme="gumballs"] .player-card.active,
+html[data-theme="skittles"] .player-card.active,
+html[data-theme="arcade"] .player-card.active,
+html[data-theme="toybox"] .player-card.active {
+  box-shadow: inset 5px 0 0 var(--accent-bright), 0 5px 14px rgba(0,0,0,.2);
+}
+
+.theme-preview-whimsical { grid-template-columns: repeat(5, 1fr); }
+.theme-preview-carnival i:nth-child(1) { background: #10234a; }
+.theme-preview-carnival i:nth-child(2) { background: #ef476f; }
+.theme-preview-carnival i:nth-child(3) { background: #ffd166; }
+.theme-preview-carnival i:nth-child(4) { background: #06d6a0; }
+.theme-preview-carnival i:nth-child(5) { background: #4cc9f0; }
+.theme-preview-gumballs i:nth-child(1) { background: #20142f; }
+.theme-preview-gumballs i:nth-child(2) { background: #ff4fa3; }
+.theme-preview-gumballs i:nth-child(3) { background: #48dff7; }
+.theme-preview-gumballs i:nth-child(4) { background: #ffd84d; }
+.theme-preview-gumballs i:nth-child(5) { background: #9be34c; }
+.theme-preview-skittles i:nth-child(1) { background: #1b1b1e; }
+.theme-preview-skittles i:nth-child(2) { background: #ff453a; }
+.theme-preview-skittles i:nth-child(3) { background: #ffd60a; }
+.theme-preview-skittles i:nth-child(4) { background: #30d158; }
+.theme-preview-skittles i:nth-child(5) { background: #bf5af2; }
+.theme-preview-arcade i:nth-child(1) { background: #17102a; }
+.theme-preview-arcade i:nth-child(2) { background: #27e6ff; }
+.theme-preview-arcade i:nth-child(3) { background: #ff37c7; }
+.theme-preview-arcade i:nth-child(4) { background: #fff36a; }
+.theme-preview-arcade i:nth-child(5) { background: #9c5cff; }
+.theme-preview-toybox i:nth-child(1) { background: #143363; }
+.theme-preview-toybox i:nth-child(2) { background: #ff5148; }
+.theme-preview-toybox i:nth-child(3) { background: #ffd23f; }
+.theme-preview-toybox i:nth-child(4) { background: #41d36f; }
+.theme-preview-toybox i:nth-child(5) { background: #4fc3ff; }
+
+/* Responsive priority: keep wheel + turn controls visible; hide scoreboard first. */
+@media (max-width: 1280px) {
+  .gameplay-panel { grid-template-columns: minmax(500px, 1.45fr) minmax(320px, .78fr); }
+  .scoreboard-column { display: none; }
+  .control-column { border: 0; }
+  .wheel-stage { min-width: 500px; width: min(100%, 58vh, 600px); }
+  .responsive-scoreboard-action { display: block; }
+}
+
+@media (max-width: 1050px) {
+  .gameplay-panel { grid-template-columns: minmax(470px, 1.35fr) minmax(300px, .78fr); }
+  .wheel-stage { min-width: 470px; width: min(100%, 56vh, 570px); }
+  .control-column { padding-left: 14px; padding-right: 4px; }
+}
+
+@media (max-width: 860px) {
+  .gameplay-panel { grid-template-columns: 1fr; }
+  .wheel-column { padding: 0 0 14px; }
+  .control-column { border: 0; padding: 16px; }
+  .wheel-stage { width: min(100%, 570px); min-width: 0; }
+  .manual-action-buttons { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .app-shell { width: min(100% - 14px, 1680px); padding-top: 10px; }
+  .topbar { align-items: stretch; flex-direction: column; }
+  .topbar-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .theme-options { grid-template-columns: 1fr; }
+  .gameplay-panel { padding: 12px; }
+  .puzzle-board { justify-content: flex-start; }
+  .puzzle-char { width: clamp(31px, 8vw, 42px); height: clamp(43px, 10vw, 54px); font-size: clamp(1.35rem, 5vw, 1.9rem); }
+  .manual-action-buttons { grid-template-columns: 1fr; }
+  .manual-action-buttons .button:last-child { grid-column: auto; }
+  .new-game-player-entry { grid-template-columns: 1fr; }
+  .split-actions { flex-direction: column; align-items: stretch; }
+  .split-actions > div { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 861px) and (max-height: 820px) {
+  .app-shell { padding-top: 8px; }
+  .topbar { margin-bottom: 8px; }
+  .puzzle-panel { padding: 10px 12px; }
+  .puzzle-board { min-height: 102px; padding: 8px; }
+  .gameplay-panel { padding: 10px; }
+  .wheel-stage { width: min(100%, 48vh, 500px); min-width: 440px; }
+  .control-column { gap: 10px; }
+  .players-list { max-height: 46vh; }
+}
+
+
+/* v21: remove decorative hairline chrome. Accessibility focus outlines and
+   intentional thick accents remain. */
+.panel,
+.button-secondary,
+.scoreboard-button,
+.played-letter,
+.spin-result,
+.player-card,
+.player-mini-button,
+.text-input,
+.dialog,
+.new-game-player-row,
+.new-game-empty-players,
+.classroom-safety-note,
+.theme-option,
+.theme-preview {
+  border-width: 0;
+}
+
+.control-column,
+.wheel-status,
+.responsive-scoreboard-action,
+.new-game-player-section {
+  border: 0;
+}
+
+
+/* Whimsical themes keep their multicolor character through filled surfaces,
+   not skinny outlines. The wheel remains completely independent. */
+html[data-theme="carnival"] .topbar-actions .button:nth-child(1),
+html[data-theme="gumballs"] .topbar-actions .button:nth-child(1),
+html[data-theme="skittles"] .topbar-actions .button:nth-child(1),
+html[data-theme="arcade"] .topbar-actions .button:nth-child(1),
+html[data-theme="toybox"] .topbar-actions .button:nth-child(1) {
+  background: color-mix(in srgb, var(--surface-3) 72%, var(--fun-1) 28%);
+}
+html[data-theme="carnival"] .topbar-actions .button:nth-child(2),
+html[data-theme="gumballs"] .topbar-actions .button:nth-child(2),
+html[data-theme="skittles"] .topbar-actions .button:nth-child(2),
+html[data-theme="arcade"] .topbar-actions .button:nth-child(2),
+html[data-theme="toybox"] .topbar-actions .button:nth-child(2) {
+  background: color-mix(in srgb, var(--surface-3) 72%, var(--fun-2) 28%);
+}
+html[data-theme="carnival"] .topbar-actions .button:nth-child(3),
+html[data-theme="gumballs"] .topbar-actions .button:nth-child(3),
+html[data-theme="skittles"] .topbar-actions .button:nth-child(3),
+html[data-theme="arcade"] .topbar-actions .button:nth-child(3),
+html[data-theme="toybox"] .topbar-actions .button:nth-child(3) {
+  background: color-mix(in srgb, var(--surface-3) 72%, var(--fun-3) 28%);
+}
+
+html[data-theme="carnival"] .manual-action-buttons .button:nth-child(1),
+html[data-theme="gumballs"] .manual-action-buttons .button:nth-child(1),
+html[data-theme="skittles"] .manual-action-buttons .button:nth-child(1),
+html[data-theme="arcade"] .manual-action-buttons .button:nth-child(1),
+html[data-theme="toybox"] .manual-action-buttons .button:nth-child(1) {
+  background: color-mix(in srgb, var(--surface-3) 78%, var(--fun-2) 22%);
+}
+html[data-theme="carnival"] .manual-action-buttons .button:nth-child(2),
+html[data-theme="gumballs"] .manual-action-buttons .button:nth-child(2),
+html[data-theme="skittles"] .manual-action-buttons .button:nth-child(2),
+html[data-theme="arcade"] .manual-action-buttons .button:nth-child(2),
+html[data-theme="toybox"] .manual-action-buttons .button:nth-child(2) {
+  background: color-mix(in srgb, var(--surface-3) 78%, var(--fun-3) 22%);
+}
+html[data-theme="carnival"] .manual-action-buttons .button:nth-child(3),
+html[data-theme="gumballs"] .manual-action-buttons .button:nth-child(3),
+html[data-theme="skittles"] .manual-action-buttons .button:nth-child(3),
+html[data-theme="arcade"] .manual-action-buttons .button:nth-child(3),
+html[data-theme="toybox"] .manual-action-buttons .button:nth-child(3) {
+  background: color-mix(in srgb, var(--surface-3) 78%, var(--fun-4) 22%);
+}
+
+
+/* =========================================================
+   v22 surface depth
+   Borderless does not mean flat. Major UI layers use contrast,
+   spacing, and broad shadows instead of 1px decorative outlines.
+   ========================================================= */
+
+/* Major cards need to clearly lift away from the page background. */
+.panel {
+  background:
+    radial-gradient(
+      circle at 22% 0%,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 36rem
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--panel-start) 90%, white 10%) 0%,
+      var(--panel-start) 34%,
+      color-mix(in srgb, var(--panel-end) 90%, black 10%) 100%
+    );
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, .38),
+    0 8px 20px rgba(0, 0, 0, .22);
+}
+
+/* Puzzle well is intentionally recessed inside its raised panel. */
+.puzzle-board {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--input-bg) 86%, var(--surface) 14%),
+      color-mix(in srgb, var(--input-bg) 94%, black 6%)
+    );
+  box-shadow:
+    inset 0 10px 26px rgba(0, 0, 0, .28),
+    0 7px 18px rgba(0, 0, 0, .18);
+}
+
+/* The controls are a distinct card within the larger gameplay panel. */
+.control-column {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 88%, white 12%),
+      color-mix(in srgb, var(--surface) 92%, black 8%)
+    );
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, .26),
+    0 5px 12px rgba(0, 0, 0, .16);
+}
+
+/* Scoreboard player cards should read as separate objects, not text floating
+   directly on the gameplay background. */
+.player-card {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 86%, white 14%),
+      var(--surface)
+    );
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, .25),
+    0 3px 8px rgba(0, 0, 0, .16);
+}
+
+.player-card.active {
+  box-shadow:
+    inset 5px 0 0 var(--accent-bright),
+    0 14px 28px rgba(0, 0, 0, .30),
+    0 4px 10px rgba(0, 0, 0, .18);
+}
+
+/* Buttons feel raised through fill + depth rather than outlines. */
+.button-secondary,
+.player-mini-button,
+.theme-option {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-3) 88%, white 12%),
+      var(--surface-3)
+    );
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, .22),
+    0 2px 5px rgba(0, 0, 0, .15);
+}
+
+.button-secondary:hover:not(:disabled),
+.player-mini-button:hover:not(:disabled),
+.theme-option:hover {
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, .28),
+    0 3px 7px rgba(0, 0, 0, .17);
+}
+
+/* Inputs are recessed, not outlined. Remove the remaining fake 1px border
+   that was implemented as an inset shadow in the prior version. */
+.text-input {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--input-bg) 96%, black 4%),
+      var(--input-bg)
+    );
+  box-shadow:
+    inset 0 5px 12px rgba(0, 0, 0, .36),
+    0 3px 8px rgba(0, 0, 0, .12);
+}
+
+.spin-result {
+  background: var(--spin-result-bg);
+  box-shadow:
+    inset 0 4px 10px rgba(0, 0, 0, .32),
+    0 4px 10px rgba(0, 0, 0, .16);
+}
+
+/* Played letters and game-setup rows get small, broad elevation. */
+.played-letter,
+.new-game-player-row,
+.new-game-empty-players {
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, .20),
+    0 2px 5px rgba(0, 0, 0, .12);
+}
+
+/* Dialogs need strong separation from the blurred page behind them. */
+.dialog-card {
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      color-mix(in srgb, var(--accent) 6%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--dialog-bg) 90%, white 10%),
+      var(--dialog-bg)
+    );
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, .48);
+}
+
+/* Theme choices need enough depth to look selectable even with no border. */
+.theme-option {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 86%, white 14%),
+      var(--surface)
+    );
+}
+
+.theme-option[aria-pressed="true"] {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 74%, var(--accent) 26%),
+      color-mix(in srgb, var(--surface) 86%, var(--accent) 14%)
+    );
+  box-shadow:
+    inset 6px 0 0 var(--accent-bright),
+    0 12px 26px rgba(0, 0, 0, .28);
+}
+
+/* Make whimsical themes slightly more dimensional without changing the wheel. */
+html[data-theme="carnival"] .panel,
+html[data-theme="gumballs"] .panel,
+html[data-theme="skittles"] .panel,
+html[data-theme="arcade"] .panel,
+html[data-theme="toybox"] .panel {
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, .40),
+    0 8px 20px rgba(0, 0, 0, .24),
+    0 0 34px color-mix(in srgb, var(--fun-2) 8%, transparent);
+}
+
+html[data-theme="carnival"] .control-column,
+html[data-theme="gumballs"] .control-column,
+html[data-theme="skittles"] .control-column,
+html[data-theme="arcade"] .control-column,
+html[data-theme="toybox"] .control-column {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in srgb, var(--fun-1) 8%, transparent),
+      transparent 18rem
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 86%, white 14%),
+      color-mix(in srgb, var(--surface) 94%, black 6%)
+    );
+}
+
+
+/* =========================================================
+   v23 accessibility-first contrast and boundaries
+   ========================================================= */
+
+/*
+  Design rule for this pass:
+  - Major surfaces use solid fills with meaningful luminance separation.
+  - Functional controls may use strong 2px boundaries.
+  - Decorative hairlines remain avoided.
+  - Shadows are subtle and never used as the only separator.
+*/
+
+/* Page and major panels: harder visual separation, no glow haze. */
+body {
+  background: var(--bg) !important;
+}
+
+.panel {
+  background: var(--panel-start) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .34) !important;
+}
+
+/* Puzzle area: distinct solid recessed region. */
+.puzzle-board {
+  background: var(--input-bg) !important;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--text) 22%, transparent) !important;
+}
+
+/* Main gameplay middle column: clear surface separation. */
+.control-column {
+  background: var(--surface) !important;
+  box-shadow: none !important;
+  border-radius: 14px;
+}
+
+/* Scoreboard/player cards: explicit objects with high contrast. */
+.player-card {
+  background: var(--surface-2) !important;
+  box-shadow: none !important;
+}
+
+.player-card.active {
+  background: color-mix(in srgb, var(--surface-2) 86%, var(--accent) 14%) !important;
+  box-shadow: inset 6px 0 0 var(--accent-bright) !important;
+}
+
+/* Buttons: solid fills, strong edges, unmistakable disabled state. */
+.button,
+.player-mini-button,
+.icon-button,
+.theme-option {
+  box-shadow: none !important;
+}
+
+.button-secondary,
+.player-mini-button,
+.icon-button,
+.theme-option {
+  background: var(--surface-3) !important;
+  border: 2px solid color-mix(in srgb, var(--text) 24%, transparent) !important;
+  color: var(--text) !important;
+}
+
+.button-secondary:hover:not(:disabled),
+.player-mini-button:hover:not(:disabled),
+.icon-button:hover:not(:disabled),
+.theme-option:hover {
+  background: color-mix(in srgb, var(--surface-3) 84%, white 16%) !important;
+  border-color: color-mix(in srgb, var(--text) 42%, transparent) !important;
+}
+
+.button-primary {
+  border: 2px solid color-mix(in srgb, #000 34%, transparent) !important;
+}
+
+.button-danger {
+  border: 2px solid color-mix(in srgb, #fff 24%, transparent) !important;
+}
+
+button:disabled,
+.button:disabled {
+  opacity: .48 !important;
+  cursor: not-allowed !important;
+  filter: grayscale(.3) !important;
+}
+
+/* Inputs: strong functional boundary. */
+.text-input,
+textarea.text-input {
+  background: var(--input-bg) !important;
+  color: var(--text) !important;
+  border: 2px solid color-mix(in srgb, var(--text) 36%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.text-input:hover,
+textarea.text-input:hover {
+  border-color: color-mix(in srgb, var(--text) 52%, transparent) !important;
+}
+
+.text-input::placeholder,
+textarea.text-input::placeholder {
+  color: color-mix(in srgb, var(--text) 62%, transparent) !important;
+}
+
+/* Focus states: obvious, thick, and independent from surrounding colors. */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.theme-option:focus-visible {
+  outline: 4px solid var(--focus) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 2px #000 !important;
+}
+
+/* Current result: clear badge rather than soft pill. */
+.spin-result {
+  background: var(--input-bg) !important;
+  border: 2px solid color-mix(in srgb, var(--text) 30%, transparent) !important;
+  box-shadow: none !important;
+}
+
+/* Played letter chips: explicit, compact boundaries. */
+.played-letter {
+  background: var(--surface-2) !important;
+  border: 2px solid color-mix(in srgb, var(--text) 24%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.played-letter.hit {
+  border-color: #6fd28f !important;
+}
+
+.played-letter.miss {
+  border-color: #ef7c7c !important;
+}
+
+/* New-game rows and empty states need real containment. */
+.new-game-player-row,
+.new-game-empty-players {
+  background: var(--surface-2) !important;
+  border: 2px solid color-mix(in srgb, var(--text) 24%, transparent) !important;
+  box-shadow: none !important;
+}
+
+/* Dialogs: solid, unmistakable separation from the page. */
+.dialog-card {
+  background: var(--dialog-bg) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .58) !important;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, .82) !important;
+  backdrop-filter: none !important;
+}
+
+/* Classroom note and helper messages: hard-edged info regions. */
+.classroom-safety-note {
+  background: color-mix(in srgb, #1e5a35 34%, var(--surface)) !important;
+  border: 2px solid #6fd28f !important;
+  color: #eafff0 !important;
+}
+
+/* Theme cards: selectable objects, not floating text. */
+.theme-option {
+  background: var(--surface-2) !important;
+}
+
+.theme-option[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--surface-2) 78%, var(--accent) 22%) !important;
+  border-color: var(--accent-bright) !important;
+  box-shadow: inset 6px 0 0 var(--accent-bright) !important;
+}
+
+/* Remove ambient glow from whimsical themes. */
+html[data-theme="carnival"] .panel,
+html[data-theme="gumballs"] .panel,
+html[data-theme="skittles"] .panel,
+html[data-theme="arcade"] .panel,
+html[data-theme="toybox"] .panel {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .34) !important;
+}
+
+/* Ensure headings and body text do not fade into surfaces. */
+body,
+.panel,
+.dialog-card,
+.player-card,
+.control-column {
+  color: var(--text) !important;
+}
+
+.field-help,
+.score-legend,
+.player-score-overall,
+.new-game-player-overall,
+.rules-list,
+.instructions-list,
+.empty-state,
+.empty-board-message {
+  color: color-mix(in srgb, var(--text) 76%, transparent) !important;
+}
+
+/* Keep the wheel visually untouched by theme/accessibility surface changes. */
+#wheelCanvas,
+.wheel-stage,
+.spin-button,
+.wheel-pointer {
+  filter: none;
+}
+
+
+/* =========================================================
+   v24 stronger game-area hierarchy
+   The game region now uses a deliberate surface ladder:
+   gameplay shell -> status/controls/scoreboard -> player cards -> controls.
+   ========================================================= */
+
+/* Make the overall gameplay shell the darkest local layer so its contents
+   read as separate functional regions rather than similar blue-on-blue blocks. */
+.gameplay-panel {
+  background:
+    color-mix(in srgb, var(--panel-start) 82%, black 18%) !important;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, .42) !important;
+}
+
+/* Wheel owns its space without another competing card around it. */
+.wheel-column {
+  background: transparent !important;
+}
+
+/* Middle column is now a true container, with internal cards for status
+   and controls. */
+.control-column {
+  display: grid !important;
+  gap: 14px !important;
+  padding: 14px !important;
+  background: var(--surface) !important;
+  border: 3px solid var(--surface-border) !important;
+  border-radius: 14px !important;
+}
+
+/* Current turn information becomes its own clearly bounded region. */
+.wheel-status {
+  padding: 14px !important;
+  background: var(--surface-2) !important;
+  border-radius: 11px !important;
+}
+
+.current-value {
+  margin-bottom: 12px !important;
+}
+
+/* Turn controls are a second clearly separated region inside the middle
+   column rather than content floating on the column background. */
+.controls-panel {
+  padding: 14px !important;
+  background: var(--surface-2) !important;
+  border-radius: 11px !important;
+}
+
+.controls-panel .panel-heading {
+  margin-bottom: 14px !important;
+}
+
+.guess-control,
+.manual-actions {
+  min-width: 0;
+}
+
+.manual-actions {
+  margin-top: 2px;
+  padding-top: 14px;
+  border-top: 3px solid var(--surface-border);
+}
+
+/* Give the scoreboard a full container so it is visually equivalent to the
+   Turn Controls region instead of headings/cards floating in empty space. */
+.scoreboard-column {
+  margin-left: 14px !important;
+  padding: 14px !important;
+  background: var(--surface) !important;
+  border: 3px solid var(--surface-border) !important;
+  border-radius: 14px !important;
+}
+
+.players-panel {
+  background: transparent !important;
+}
+
+.players-panel .panel-heading {
+  margin-bottom: 14px !important;
+}
+
+/* Player cards sit one full surface step above the scoreboard container. */
+.player-card {
+  padding: 14px !important;
+  background: var(--surface-2) !important;
+  border: 3px solid color-mix(in srgb, var(--surface-border) 88%, white 12%) !important;
+  border-radius: 11px !important;
+}
+
+.player-card.active {
+  background:
+    color-mix(in srgb, var(--surface-2) 78%, var(--accent) 22%) !important;
+  border-color: var(--accent-bright) !important;
+  box-shadow:
+    inset 7px 0 0 var(--accent-bright) !important;
+}
+
+/* Score numbers get more visual weight and spacing from labels. */
+.player-score-current {
+  font-size: 1.05rem !important;
+}
+
+.player-score-overall {
+  margin-top: 2px;
+}
+
+/* Make actionable controls visibly distinct from the surfaces they sit on. */
+.controls-panel .button-secondary,
+.player-card .player-mini-button {
+  background: var(--input-bg) !important;
+  border-color: color-mix(in srgb, var(--text) 42%, transparent) !important;
+}
+
+.controls-panel .button-secondary:hover:not(:disabled),
+.player-card .player-mini-button:hover:not(:disabled) {
+  background:
+    color-mix(in srgb, var(--input-bg) 76%, var(--surface-3) 24%) !important;
+  border-color: color-mix(in srgb, var(--text) 62%, transparent) !important;
+}
+
+/* Primary consonant action remains visually dominant. */
+.controls-panel .button-primary {
+  min-height: 48px;
+  font-weight: 900;
+}
+
+/* Letter input needs to be obviously interactive, not a dark hole in the card. */
+.letter-input {
+  background:
+    color-mix(in srgb, var(--input-bg) 86%, white 14%) !important;
+  border-color:
+    color-mix(in srgb, var(--text) 54%, transparent) !important;
+}
+
+/* The result box belongs to the status card and gets stronger contrast. */
+.spin-result {
+  background: var(--input-bg) !important;
+  border-color:
+    color-mix(in srgb, var(--text) 46%, transparent) !important;
+}
+
+/* Keep disabled controls readable. Their state is communicated through
+   background treatment and cursor as well as reduced emphasis. */
+button:disabled,
+.button:disabled {
+  opacity: 1 !important;
+  color: color-mix(in srgb, var(--text) 68%, var(--surface)) !important;
+  background:
+    color-mix(in srgb, var(--surface-3) 62%, var(--surface) 38%) !important;
+  border-color:
+    color-mix(in srgb, var(--text) 24%, transparent) !important;
+}
+
+/* Stronger section labels within the game area. */
+.gameplay-panel .section-kicker {
+  letter-spacing: .19em !important;
+  font-weight: 950 !important;
+}
+
+/* Slightly improve readability of explanatory text in the game area. */
+.gameplay-panel .field-help,
+.gameplay-panel .score-legend,
+.gameplay-panel .player-score-overall {
+  color:
+    color-mix(in srgb, var(--text) 84%, transparent) !important;
+}
+
+/* At scoreboard-modal breakpoints, the middle column keeps all of this
+   hierarchy while the right column disappears as before. */
+@media (max-width: 1280px) {
+  .scoreboard-column {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .control-column {
+    margin-top: 4px;
+  }
+}
